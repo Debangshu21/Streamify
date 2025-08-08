@@ -40,7 +40,7 @@ const OnboardingPage = () => {
 
     const handleRandomAvatar = () => {
         const idx = Math.floor(Math.random() * 32) + 1; // 1-32 included
-        const randomAvatar = `https://mighty.tools/mockmind-api/content/cartoon/${idx}.jpg`;
+        const randomAvatar = `https://mockmind-api.uifaces.co/content/cartoon/${idx}.jpg`;
 
         setFormState({ ...formState, profilePic: randomAvatar });
         toast.success("Random profile picture generated!");

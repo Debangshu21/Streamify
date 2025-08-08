@@ -31,7 +31,7 @@ export async function signup(req, res) {
 
         // Generate avatar as DP for profiles
         const idx = Math.floor(Math.random() * 32) + 1; // 1-32 included
-        const randomAvatar = `https://mighty.tools/mockmind-api/content/cartoon/${idx}.jpg`;
+        const randomAvatar = `https://mockmind-api.uifaces.co/content/cartoon/${idx}.jpg`;
 
         const newUser = await User.create({
             email,
@@ -56,7 +56,7 @@ export async function signup(req, res) {
         });
 
         res.cookie("jwt", token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
             httpOnly: true, // prevent XSS attacks,
             sameSite: "strict", // prevent CSRF attacks
             secure: process.env.NODE_ENV === "production",
